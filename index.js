@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { client } = require('./db');
 client.connect();
 
@@ -5,8 +6,7 @@ const PORT = 3000;
 const express = require('express');
 const server = express();
 
-const bodyParser = require('body-parser');
-server.use(bodyParser.json());
+server.use(express.json());
 
 const morgan = require('morgan');
 server.use(morgan('dev'));
